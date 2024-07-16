@@ -1,31 +1,5 @@
 # Bug-Recognizer-Project
 
-This is our directory structure:
-
-
-Bug Recognizer Project
-├── App
-│   ├── models
-│   │   ├── model.h5
-│   │   └── labelencoder.npy
-│   ├── static
-│   │   ├── images
-│   │   ├── neu.png
-│   │   ├── neu2.png
-│   │   └── style.css
-│   ├── templates
-│   │   ├── index.html
-│   │   └── result.html
-│   └── app.py
-├── Code
-│   └── Recognizer
-├── Database
-│   ├── audio
-│   ├── image
-│   └── metadata
-└── uploads
-
-
 Code Execution :
 
 Run app.py in your code editor (I used visual studio code).
