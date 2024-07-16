@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Emre Yalcin">
+    <meta name="keywords" content="Bug, Sound, Recognizer">
+    <meta name="description" content="Bug Sound Recognizer">
+    <title>Bug Recognizer</title>
+    <link rel="stylesheet" href="/App/static/style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://kit.fontawesome.com/d49e358395.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <div class="contents">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj4cDsCG5OQOOJwaDH22eEXcnYt0wnMluZH7WY-k1-yiRk-VCoWAB0ST95LbdG6vu8oqwVq1ZaTzVTbdkgvEs35mEhG_0dL4wj5mMc3nxWZBZJz7WlNVowfsByvR-Av0DaSjVKTGKjWjjpyz4qjvZAR6QAWX8JrCZTd0mRp2hPxRYZyk8w7pfEMR4CLAQI/s300/neu.png"
+            alt="neulogo" id="neulogo">
+
+
+        <h1 id="indexh1">Bug Sound Recognizer</h1>
+        <form action="{{ url_for('classify') }}" method="post">
+            <button type="submit" id="btn-record"><i class="fa-solid fa-microphone fa-2xl" id="mic-but"
+                    style="color: #800b0b;"></i></button>
+        </form>
+        <div id="uploaddiv">
+            <form action="{{ url_for('upload') }}" method="post" enctype="multipart/form-data" id="upload">
+                <input type="file" name="file" accept="audio/*"  required>
+                <button type="submit" id="uploadfile">Upload</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Emre Yalcin">
+    <meta name="keywords" content="Bug, Sound, Recognizer">
+    <meta name="description" content="Bug Sound Recognizer">
+    <title>Result</title>
+    <link rel="stylesheet" href="/App/static/style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div id="resultdiv">
+
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj4cDsCG5OQOOJwaDH22eEXcnYt0wnMluZH7WY-k1-yiRk-VCoWAB0ST95LbdG6vu8oqwVq1ZaTzVTbdkgvEs35mEhG_0dL4wj5mMc3nxWZBZJz7WlNVowfsByvR-Av0DaSjVKTGKjWjjpyz4qjvZAR6QAWX8JrCZTd0mRp2hPxRYZyk8w7pfEMR4CLAQI/s300/neu.png"
+            alt="neulogo" id="neulogo">
+
+
+        <div id="resultcontents">
+            <h1 id="resultheader">Result</h1>
+            <div id="results">
+
+                {% for index in range(results|length) %}
+                {% set result = results[index] %}
+                {% set data = insect_data[index] %}
+
+                <h3>Classification Result: {{ result[0] }}</h3>
+                <p id="confidenceresult">Confidence: {{ result[1] }}</p>
+
+                {% if data %}
+                <img src="{{ url_for('static', filename=data['image']) }}" alt="{{ result[0] }}"
+                    style="max-width: 500px; max-height: 500px;">
+                <p id="resultdescription">{{ data['description'] }}</p>
+                {% else %}
+                <p>No information available for this insect.</p>
+                {% endif %}
+
+                <br>
+                {% endfor %}
+            </div>
+        </div>
+
+        <a href="/" id="goback">Go back</a>
+    </div>
+</body>
+
+</html>
